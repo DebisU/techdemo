@@ -1,0 +1,1 @@
+sourceset_dependencies = '{":realtime-processor:dokkaHtmlPartial/main":[],":api-gateway:dokkaHtmlPartial/main":[],":reporting-service:dokkaHtmlPartial/main":[],":shared-models:dokkaHtmlPartial/main":[]}'

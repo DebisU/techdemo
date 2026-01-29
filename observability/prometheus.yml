@@ -1,0 +1,43 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  # API Gateway
+  - job_name: 'api-gateway'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['api-gateway:8080']
+        labels:
+          service: 'api-gateway'
+          environment: 'local'
+
+  # Realtime Processor
+  - job_name: 'realtime-processor'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['realtime-processor:8081']
+        labels:
+          service: 'realtime-processor'
+          environment: 'local'
+
+  # Reporting Service
+  - job_name: 'reporting-service'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['reporting-service:8082']
+        labels:
+          service: 'reporting-service'
+          environment: 'local'
+
+  # Prometheus self-monitoring
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # RabbitMQ (prometheus plugin enabled)
+  - job_name: 'rabbitmq'
+    static_configs:
+      - targets: ['rabbitmq:15692']
+        labels:
+          service: 'rabbitmq'

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>LocationRequest</title>
+<!--[+]cmd:{"@class":"org.jetbrains.dokka.base.templating.PathToRootSubstitutionCommand","pattern":"###","default":"../../"}-->    <link href="###images/logo-icon.svg" rel="icon" type="image/svg">
+<!--[-]cmd-->    <!--[+]cmd:{"@class":"org.jetbrains.dokka.base.templating.PathToRootSubstitutionCommand","pattern":"###","default":"../../"}--><script>var pathToRoot = "###";</script><!--[-]cmd-->
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<!--[+]cmd:{"@class":"org.jetbrains.dokka.base.templating.PathToRootSubstitutionCommand","pattern":"###","default":"../../"}--><script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="###scripts/sourceset_dependencies.js" async="async"></script>
+<link href="###styles/style.css" rel="Stylesheet">
+<link href="###styles/main.css" rel="Stylesheet">
+<link href="###styles/prism.css" rel="Stylesheet">
+<link href="###styles/logo-styles.css" rel="Stylesheet">
+<link href="###styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="###scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="###scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="###scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="###scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="###scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="###scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+<!--[-]cmd--></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<!--[+]cmd:{"@class":"org.jetbrains.dokka.base.templating.PathToRootSubstitutionCommand","pattern":"###","default":"../../"}-->                    <a class="library-name--link" href="###index.html">
+<!--[+]cmd:{"@class":"org.jetbrains.dokka.base.templating.ProjectNameSubstitutionCommand","pattern":"###","default":"shared-models"}-->                            ###
+<!--[-]cmd-->                    </a>
+<!--[-]cmd-->            </div>
+            <div class="library-version">
+<dokka-template-command data="{&quot;@class&quot;:&quot;org.jetbrains.dokka.base.templating.ReplaceVersionsCommand&quot;,&quot;location&quot;:&quot;com.verisure.techdemo.models/-location-request/index.html&quot;}"></dokka-template-command>            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":shared-models:dokkaHtmlPartial/main">jvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="shared-models::com.verisure.techdemo.models/LocationRequest///PointingToDeclaration//1924212040">
+  <div class="breadcrumbs"><a href="../../index.html">shared-models</a><span class="delimiter">/</span><a href="../index.html">com.verisure.techdemo.models</a><span class="delimiter">/</span><span class="current">LocationRequest</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Location</span><wbr></wbr><span><span>Request</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared-models:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">LocationRequest</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>userId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>latitude<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>longitude<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>timestamp<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html">Instant</a><span class="token operator"> = </span>Instant.now()</span></span><span class="token punctuation">)</span></div><p class="paragraph">Data Transfer Object for Incoming Location Requests.</p><p class="paragraph">Represents the HTTP request body for location submissions. Includes built-in validation via Kotlin's <code class="lang-kotlin">init</code> block.</p><h2 class="">JSON Example</h2><div class="sample-container"><pre><code class="block lang-json" theme="idea">{<br>  &quot;userId&quot;: &quot;user-12345&quot;,<br>  &quot;latitude&quot;: 40.4168,<br>  &quot;longitude&quot;: -3.7038,<br>  &quot;timestamp&quot;: &quot;2024-01-15T10:30:00Z&quot;<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h2 class="">Validation Rules</h2><ul><li><p class="paragraph"><code class="lang-kotlin">userId</code>: Must not be blank</p></li><li><p class="paragraph"><code class="lang-kotlin">latitude</code>: Must be in range -90, 90</p></li><li><p class="paragraph"><code class="lang-kotlin">longitude</code>: Must be in range -180, 180</p></li><li><p class="paragraph"><code class="lang-kotlin">timestamp</code>: Optional, defaults to current time</p></li></ul><h2 class="">Usage</h2><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">@PostMapping<br>fun submitLocation(@RequestBody request: LocationRequest): ResponseEntity&lt;...&gt; {<br>    // Validation happens automatically on construction<br>    val event = LocationEvent.from(request)<br>    // ...<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><span class="kdoc-tag"><h4 class="">Author</h4><p class="paragraph">Verisure Tech Team</p></span><span class="kdoc-tag"><h4 class="">Since</h4><p class="paragraph">1.0.0</p></span><h4 class="">See also</h4><div class="table"><div class="table-row" data-filterable-current=":shared-models:dokkaHtmlPartial/main" data-filterable-set=":shared-models:dokkaHtmlPartial/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-location-event/index.html"><span>Location</span><wbr></wbr><span><span>Event</span></span></a></div></span></div><div><div class="title"><p class="paragraph">Domain event created from this request</p></div></div></div></div></div><h4 class="">Throws</h4><div class="table"><div class="table-row" data-filterable-current=":shared-models:dokkaHtmlPartial/main" data-filterable-set=":shared-models:dokkaHtmlPartial/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html"><span>Illegal</span><wbr></wbr><span>Argument</span><wbr></wbr><span><span>Exception</span></span></a></div></span></div><div><div class="title"><p class="paragraph">If validation constraints are violated</p></div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="2118658583%2FConstructors%2F1924212040" anchor-label="LocationRequest" id="2118658583%2FConstructors%2F1924212040" data-filterable-set=":shared-models:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":shared-models:dokkaHtmlPartial/main" data-filterable-set=":shared-models:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-location-request.html"><span>Location</span><wbr></wbr><span><span>Request</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2118658583%2FConstructors%2F1924212040"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared-models:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">userId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">latitude<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter ">longitude<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter ">timestamp<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html">Instant</a><span class="token operator"> = </span>Instant.now()</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="407914246%2FProperties%2F1924212040" anchor-label="latitude" id="407914246%2FProperties%2F1924212040" data-filterable-set=":shared-models:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":shared-models:dokkaHtmlPartial/main" data-filterable-set=":shared-models:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="latitude.html"><span><span>latitude</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="407914246%2FProperties%2F1924212040"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared-models:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="latitude.html">latitude</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">GPS latitude coordinate in degrees (-90 to 90).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1340052825%2FProperties%2F1924212040" anchor-label="longitude" id="1340052825%2FProperties%2F1924212040" data-filterable-set=":shared-models:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":shared-models:dokkaHtmlPartial/main" data-filterable-set=":shared-models:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="longitude.html"><span><span>longitude</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1340052825%2FProperties%2F1924212040"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared-models:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="longitude.html">longitude</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">GPS longitude coordinate in degrees (-180 to 180).</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-496515118%2FProperties%2F1924212040" anchor-label="timestamp" id="-496515118%2FProperties%2F1924212040" data-filterable-set=":shared-models:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":shared-models:dokkaHtmlPartial/main" data-filterable-set=":shared-models:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="timestamp.html"><span><span>timestamp</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-496515118%2FProperties%2F1924212040"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared-models:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="timestamp.html">timestamp</a><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html">Instant</a></div><div class="brief "><p class="paragraph">Timestamp when the location was captured on the device.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-604457044%2FProperties%2F1924212040" anchor-label="userId" id="-604457044%2FProperties%2F1924212040" data-filterable-set=":shared-models:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":shared-models:dokkaHtmlPartial/main" data-filterable-set=":shared-models:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="user-id.html"><span>user</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-604457044%2FProperties%2F1924212040"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":shared-models:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="user-id.html">userId</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">Unique identifier for the user submitting the location.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2026 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+com.verisure.techdemo.realtime
+com.verisure.techdemo.realtime.config
+com.verisure.techdemo.realtime.consumer
+com.verisure.techdemo.realtime.service
+

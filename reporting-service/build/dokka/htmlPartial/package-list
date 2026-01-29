@@ -1,0 +1,11 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+com.verisure.techdemo.reporting
+com.verisure.techdemo.reporting.config
+com.verisure.techdemo.reporting.consumer
+com.verisure.techdemo.reporting.controller
+com.verisure.techdemo.reporting.entity
+com.verisure.techdemo.reporting.repository
+com.verisure.techdemo.reporting.service
+

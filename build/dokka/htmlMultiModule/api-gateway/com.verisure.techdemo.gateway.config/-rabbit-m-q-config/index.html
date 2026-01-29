@@ -1,0 +1,228 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>RabbitMQConfig</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../index.html">
+                            techdemo
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":api-gateway:dokkaHtmlPartial/main">jvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="api-gateway::com.verisure.techdemo.gateway.config/RabbitMQConfig///PointingToDeclaration//1822805161">
+  <div class="breadcrumbs"><a href="../../index.html">api-gateway</a><span class="delimiter">/</span><a href="../index.html">com.verisure.techdemo.gateway.config</a><span class="delimiter">/</span><span class="current">RabbitMQConfig</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Rabbit</span><wbr><span><span>MQConfig</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":api-gateway:dokkaHtmlPartial/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.springframework.context.annotation/Configuration///PointingToDeclaration/"><span class="token annotation builtin">Configuration</span></span></div></div><span class="token keyword">class </span><a href="index.html">RabbitMQConfig</a></div><p class="paragraph">RabbitMQ Configuration for the API Gateway.</p><p class="paragraph">Defines the message broker topology for the location tracking system. Uses a <strong>Fanout Exchange</strong> pattern to broadcast events to multiple consumers.</p><h2 class="">Topology Diagram</h2><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">                                ┌─────────────────────────┐<br>                                │  location.realtime.queue │ → Realtime Processor<br>                                └─────────────────────────┘<br>    [API Gateway] → [location.exchange (FANOUT)]<br>                                ┌─────────────────────────┐<br>                                │ location.reporting.queue │ → Reporting Service<br>                                └─────────────────────────┘</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h2 class="">Why Fanout Exchange?</h2><ul><li><p class="paragraph"><strong>Decoupling</strong>: Publishers don't need to know about consumers</p></li><li><p class="paragraph"><strong>Scalability</strong>: Easy to add new consumers without code changes</p></li><li><p class="paragraph"><strong>Reliability</strong>: Each consumer has its own queue (independent processing)</p></li><li><p class="paragraph"><strong>Flexibility</strong>: Different consumers can process at different speeds</p></li></ul><h2 class="">Queue Properties</h2><ul><li><p class="paragraph"><strong>Durable</strong>: Queues survive broker restart</p></li><li><p class="paragraph"><strong>Non-exclusive</strong>: Multiple consumers can connect</p></li><li><p class="paragraph"><strong>Non-auto-delete</strong>: Queues persist even without consumers</p></li></ul><span class="kdoc-tag"><h4 class="">Author</h4><p class="paragraph">Verisure Tech Team</p></span><span class="kdoc-tag"><h4 class="">Since</h4><p class="paragraph">1.0.0</p></span></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="-1357715998%2FConstructors%2F1822805161" anchor-label="RabbitMQConfig" id="-1357715998%2FConstructors%2F1822805161" data-filterable-set=":api-gateway:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":api-gateway:dokkaHtmlPartial/main" data-filterable-set=":api-gateway:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-rabbit-m-q-config.html"><span>Rabbit</span><wbr><span><span>MQConfig</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1357715998%2FConstructors%2F1822805161"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":api-gateway:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="1182214015%2FClasslikes%2F1822805161" anchor-label="Companion" id="1182214015%2FClasslikes%2F1822805161" data-filterable-set=":api-gateway:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":api-gateway:dokkaHtmlPartial/main" data-filterable-set=":api-gateway:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1182214015%2FClasslikes%2F1822805161"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":api-gateway:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="638597866%2FFunctions%2F1822805161" anchor-label="locationExchange" id="638597866%2FFunctions%2F1822805161" data-filterable-set=":api-gateway:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":api-gateway:dokkaHtmlPartial/main" data-filterable-set=":api-gateway:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="location-exchange.html"><span>location</span><wbr><span><span>Exchange</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="638597866%2FFunctions%2F1822805161"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":api-gateway:dokkaHtmlPartial/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.springframework.context.annotation/Bean///PointingToDeclaration/"><span class="token annotation builtin">Bean</span></span></div></div><span class="token keyword">fun </span><a href="location-exchange.html"><span class="token function">locationExchange</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="org.springframework.amqp.core/FanoutExchange///PointingToDeclaration/">FanoutExchange</span></div><div class="brief "><p class="paragraph">Creates the fanout exchange for broadcasting location events.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-201226839%2FFunctions%2F1822805161" anchor-label="messageConverter" id="-201226839%2FFunctions%2F1822805161" data-filterable-set=":api-gateway:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":api-gateway:dokkaHtmlPartial/main" data-filterable-set=":api-gateway:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="message-converter.html"><span>message</span><wbr><span><span>Converter</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-201226839%2FFunctions%2F1822805161"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":api-gateway:dokkaHtmlPartial/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.springframework.context.annotation/Bean///PointingToDeclaration/"><span class="token annotation builtin">Bean</span></span></div></div><span class="token keyword">fun </span><a href="message-converter.html"><span class="token function">messageConverter</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="org.springframework.amqp.support.converter/MessageConverter///PointingToDeclaration/">MessageConverter</span></div><div class="brief "><p class="paragraph">Configures JSON message serialization using Jackson.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="616214043%2FFunctions%2F1822805161" anchor-label="rabbitTemplate" id="616214043%2FFunctions%2F1822805161" data-filterable-set=":api-gateway:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":api-gateway:dokkaHtmlPartial/main" data-filterable-set=":api-gateway:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="rabbit-template.html"><span>rabbit</span><wbr><span><span>Template</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="616214043%2FFunctions%2F1822805161"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":api-gateway:dokkaHtmlPartial/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.springframework.context.annotation/Bean///PointingToDeclaration/"><span class="token annotation builtin">Bean</span></span></div></div><span class="token keyword">fun </span><a href="rabbit-template.html"><span class="token function">rabbitTemplate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">connectionFactory<span class="token operator">: </span><span data-unresolved-link="org.springframework.amqp.rabbit.connection/ConnectionFactory///PointingToDeclaration/">ConnectionFactory</span><span class="token punctuation">, </span></span><span class="parameter ">messageConverter<span class="token operator">: </span><span data-unresolved-link="org.springframework.amqp.support.converter/MessageConverter///PointingToDeclaration/">MessageConverter</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="org.springframework.amqp.rabbit.core/RabbitTemplate///PointingToDeclaration/">RabbitTemplate</span></div><div class="brief "><p class="paragraph">Configures the RabbitTemplate with JSON serialization.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1517848792%2FFunctions%2F1822805161" anchor-label="realtimeBinding" id="-1517848792%2FFunctions%2F1822805161" data-filterable-set=":api-gateway:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":api-gateway:dokkaHtmlPartial/main" data-filterable-set=":api-gateway:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="realtime-binding.html"><span>realtime</span><wbr><span><span>Binding</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1517848792%2FFunctions%2F1822805161"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":api-gateway:dokkaHtmlPartial/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.springframework.context.annotation/Bean///PointingToDeclaration/"><span class="token annotation builtin">Bean</span></span></div></div><span class="token keyword">fun </span><a href="realtime-binding.html"><span class="token function">realtimeBinding</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">realtimeQueue<span class="token operator">: </span><span data-unresolved-link="org.springframework.amqp.core/Queue///PointingToDeclaration/">Queue</span><span class="token punctuation">, </span></span><span class="parameter ">locationExchange<span class="token operator">: </span><span data-unresolved-link="org.springframework.amqp.core/FanoutExchange///PointingToDeclaration/">FanoutExchange</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="org.springframework.amqp.core/Binding///PointingToDeclaration/">Binding</span></div><div class="brief "><p class="paragraph">Binds the realtime queue to the fanout exchange.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-886613742%2FFunctions%2F1822805161" anchor-label="realtimeQueue" id="-886613742%2FFunctions%2F1822805161" data-filterable-set=":api-gateway:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":api-gateway:dokkaHtmlPartial/main" data-filterable-set=":api-gateway:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="realtime-queue.html"><span>realtime</span><wbr><span><span>Queue</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-886613742%2FFunctions%2F1822805161"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":api-gateway:dokkaHtmlPartial/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.springframework.context.annotation/Bean///PointingToDeclaration/"><span class="token annotation builtin">Bean</span></span></div></div><span class="token keyword">fun </span><a href="realtime-queue.html"><span class="token function">realtimeQueue</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="org.springframework.amqp.core/Queue///PointingToDeclaration/">Queue</span></div><div class="brief "><p class="paragraph">Creates the queue for real-time processing.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1436953387%2FFunctions%2F1822805161" anchor-label="reportingBinding" id="-1436953387%2FFunctions%2F1822805161" data-filterable-set=":api-gateway:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":api-gateway:dokkaHtmlPartial/main" data-filterable-set=":api-gateway:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="reporting-binding.html"><span>reporting</span><wbr><span><span>Binding</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1436953387%2FFunctions%2F1822805161"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":api-gateway:dokkaHtmlPartial/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.springframework.context.annotation/Bean///PointingToDeclaration/"><span class="token annotation builtin">Bean</span></span></div></div><span class="token keyword">fun </span><a href="reporting-binding.html"><span class="token function">reportingBinding</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">reportingQueue<span class="token operator">: </span><span data-unresolved-link="org.springframework.amqp.core/Queue///PointingToDeclaration/">Queue</span><span class="token punctuation">, </span></span><span class="parameter ">locationExchange<span class="token operator">: </span><span data-unresolved-link="org.springframework.amqp.core/FanoutExchange///PointingToDeclaration/">FanoutExchange</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="org.springframework.amqp.core/Binding///PointingToDeclaration/">Binding</span></div><div class="brief "><p class="paragraph">Binds the reporting queue to the fanout exchange.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-695820289%2FFunctions%2F1822805161" anchor-label="reportingQueue" id="-695820289%2FFunctions%2F1822805161" data-filterable-set=":api-gateway:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":api-gateway:dokkaHtmlPartial/main" data-filterable-set=":api-gateway:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="reporting-queue.html"><span>reporting</span><wbr><span><span>Queue</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-695820289%2FFunctions%2F1822805161"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":api-gateway:dokkaHtmlPartial/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.springframework.context.annotation/Bean///PointingToDeclaration/"><span class="token annotation builtin">Bean</span></span></div></div><span class="token keyword">fun </span><a href="reporting-queue.html"><span class="token function">reportingQueue</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="org.springframework.amqp.core/Queue///PointingToDeclaration/">Queue</span></div><div class="brief "><p class="paragraph">Creates the queue for persistence and reporting.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2026 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

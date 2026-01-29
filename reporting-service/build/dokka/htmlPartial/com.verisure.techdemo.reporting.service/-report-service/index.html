@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>ReportService</title>
+<!--[+]cmd:{"@class":"org.jetbrains.dokka.base.templating.PathToRootSubstitutionCommand","pattern":"###","default":"../../"}-->    <link href="###images/logo-icon.svg" rel="icon" type="image/svg">
+<!--[-]cmd-->    <!--[+]cmd:{"@class":"org.jetbrains.dokka.base.templating.PathToRootSubstitutionCommand","pattern":"###","default":"../../"}--><script>var pathToRoot = "###";</script><!--[-]cmd-->
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<!--[+]cmd:{"@class":"org.jetbrains.dokka.base.templating.PathToRootSubstitutionCommand","pattern":"###","default":"../../"}--><script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="###scripts/sourceset_dependencies.js" async="async"></script>
+<link href="###styles/style.css" rel="Stylesheet">
+<link href="###styles/main.css" rel="Stylesheet">
+<link href="###styles/prism.css" rel="Stylesheet">
+<link href="###styles/logo-styles.css" rel="Stylesheet">
+<link href="###styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="###scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="###scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="###scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="###scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="###scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="###scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+<!--[-]cmd--></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<!--[+]cmd:{"@class":"org.jetbrains.dokka.base.templating.PathToRootSubstitutionCommand","pattern":"###","default":"../../"}-->                    <a class="library-name--link" href="###index.html">
+<!--[+]cmd:{"@class":"org.jetbrains.dokka.base.templating.ProjectNameSubstitutionCommand","pattern":"###","default":"reporting-service"}-->                            ###
+<!--[-]cmd-->                    </a>
+<!--[-]cmd-->            </div>
+            <div class="library-version">
+<dokka-template-command data="{&quot;@class&quot;:&quot;org.jetbrains.dokka.base.templating.ReplaceVersionsCommand&quot;,&quot;location&quot;:&quot;com.verisure.techdemo.reporting.service/-report-service/index.html&quot;}"></dokka-template-command>            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":reporting-service:dokkaHtmlPartial/main">jvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="reporting-service::com.verisure.techdemo.reporting.service/ReportService///PointingToDeclaration//1781795844">
+  <div class="breadcrumbs"><a href="../../index.html">reporting-service</a><span class="delimiter">/</span><a href="../index.html">com.verisure.techdemo.reporting.service</a><span class="delimiter">/</span><span class="current">ReportService</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Report</span><wbr></wbr><span><span>Service</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reporting-service:dokkaHtmlPartial/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><dokka-template-command data="{&quot;@class&quot;:&quot;org.jetbrains.dokka.base.templating.ResolveLinkCommand&quot;,&quot;dri&quot;:{&quot;packageName&quot;:&quot;org.springframework.stereotype&quot;,&quot;classNames&quot;:&quot;Service&quot;,&quot;callable&quot;:null,&quot;target&quot;:{&quot;@class&quot;:&quot;org.jetbrains.dokka.links.PointingToDeclaration&quot;},&quot;extra&quot;:null}}"><span class="token annotation builtin">Service</span></dokka-template-command></div></div><span class="token keyword">class </span><a href="index.html">ReportService</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">repository<span class="token operator">: </span><a href="../../com.verisure.techdemo.reporting.repository/-location-repository/index.html">LocationRepository</a></span></span><span class="token punctuation">)</span></div><p class="paragraph">Report Generation Service.</p><p class="paragraph">Generates aggregated analytics reports from the location data stored in PostgreSQL. Uses Redis caching to improve response times for repeated requests.</p><h2 class="">Caching Strategy</h2><ul><li><p class="paragraph"><strong>Cache Name</strong>: <code class="lang-kotlin">locationReports</code></p></li><li><p class="paragraph"><strong>TTL</strong>: 60 seconds (configured in application.properties)</p></li><li><p class="paragraph"><strong>Invalidation</strong>: Every 100 events (see LocationEventConsumer)</p></li></ul><h2 class="">Report Types</h2><ol><li><p class="paragraph"><strong>Global Report</strong>: Aggregated stats for all users</p></li><li><p class="paragraph"><strong>User Report</strong>: Detailed location history for a specific user</p></li></ol><h2 class="">Query Performance</h2><p class="paragraph">The <a href="generate-report.html">generateReport</a> method uses a native query with aggregations:</p><div class="sample-container"><pre><code class="block lang-sql" theme="idea">SELECT user_id, COUNT(*), MAX(timestamp), last_lat, last_lon<br>FROM locations<br>GROUP BY user_id</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Consider adding indexes on <code class="lang-kotlin">user_id</code> and <code class="lang-kotlin">timestamp</code> for large datasets.</p><span class="kdoc-tag"><h4 class="">Author</h4><p class="paragraph">Verisure Tech Team</p></span><span class="kdoc-tag"><h4 class="">Since</h4><p class="paragraph">1.0.0</p></span><h4 class="">See also</h4><div class="table"><div class="table-row" data-filterable-current=":reporting-service:dokkaHtmlPartial/main" data-filterable-set=":reporting-service:dokkaHtmlPartial/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><dokka-template-command data="{&quot;@class&quot;:&quot;org.jetbrains.dokka.base.templating.ResolveLinkCommand&quot;,&quot;dri&quot;:{&quot;packageName&quot;:&quot;com.verisure.techdemo.models&quot;,&quot;classNames&quot;:&quot;LocationReport&quot;,&quot;callable&quot;:null,&quot;target&quot;:{&quot;@class&quot;:&quot;org.jetbrains.dokka.links.PointingToDeclaration&quot;},&quot;extra&quot;:null}}"><span>Location</span><wbr></wbr><span><span>Report</span></span></dokka-template-command></div></span></div><div><div class="title"><p class="paragraph">Individual user report data</p></div></div></div></div><div class="table-row" data-filterable-current=":reporting-service:dokkaHtmlPartial/main" data-filterable-set=":reporting-service:dokkaHtmlPartial/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><dokka-template-command data="{&quot;@class&quot;:&quot;org.jetbrains.dokka.base.templating.ResolveLinkCommand&quot;,&quot;dri&quot;:{&quot;packageName&quot;:&quot;com.verisure.techdemo.models&quot;,&quot;classNames&quot;:&quot;ReportResponse&quot;,&quot;callable&quot;:null,&quot;target&quot;:{&quot;@class&quot;:&quot;org.jetbrains.dokka.links.PointingToDeclaration&quot;},&quot;extra&quot;:null}}"><span>Report</span><wbr></wbr><span><span>Response</span></span></dokka-template-command></div></span></div><div><div class="title"><p class="paragraph">Aggregated response with all reports</p></div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="389362331%2FConstructors%2F1781795844" anchor-label="ReportService" id="389362331%2FConstructors%2F1781795844" data-filterable-set=":reporting-service:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":reporting-service:dokkaHtmlPartial/main" data-filterable-set=":reporting-service:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-report-service.html"><span>Report</span><wbr></wbr><span><span>Service</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="389362331%2FConstructors%2F1781795844"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reporting-service:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">repository<span class="token operator">: </span><a href="../../com.verisure.techdemo.reporting.repository/-location-repository/index.html">LocationRepository</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="403125661%2FFunctions%2F1781795844" anchor-label="generateReport" id="403125661%2FFunctions%2F1781795844" data-filterable-set=":reporting-service:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":reporting-service:dokkaHtmlPartial/main" data-filterable-set=":reporting-service:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="generate-report.html"><span>generate</span><wbr></wbr><span><span>Report</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="403125661%2FFunctions%2F1781795844"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reporting-service:dokkaHtmlPartial/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><dokka-template-command data="{&quot;@class&quot;:&quot;org.jetbrains.dokka.base.templating.ResolveLinkCommand&quot;,&quot;dri&quot;:{&quot;packageName&quot;:&quot;org.springframework.cache.annotation&quot;,&quot;classNames&quot;:&quot;Cacheable&quot;,&quot;callable&quot;:null,&quot;target&quot;:{&quot;@class&quot;:&quot;org.jetbrains.dokka.links.PointingToDeclaration&quot;},&quot;extra&quot;:null}}"><span class="token annotation builtin">Cacheable</span></dokka-template-command><span class="token punctuation">(</span><span>value<span class="token operator"> = </span><span class="token punctuation">[</span><span><span class="breakable-word"><span class="token string">&quot;locationReports&quot;</span></span></span><wbr></wbr><span class="token punctuation">]</span><span class="token punctuation">, </span></span><wbr></wbr><span>unless<span class="token operator"> = </span><span class="breakable-word"><span class="token string">&quot;#result == null&quot;</span></span></span><wbr></wbr><span class="token punctuation">)</span></div></div><span class="token keyword">fun </span><a href="generate-report.html"><span class="token function">generateReport</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><dokka-template-command data="{&quot;@class&quot;:&quot;org.jetbrains.dokka.base.templating.ResolveLinkCommand&quot;,&quot;dri&quot;:{&quot;packageName&quot;:&quot;com.verisure.techdemo.models&quot;,&quot;classNames&quot;:&quot;ReportResponse&quot;,&quot;callable&quot;:null,&quot;target&quot;:{&quot;@class&quot;:&quot;org.jetbrains.dokka.links.PointingToDeclaration&quot;},&quot;extra&quot;:null}}">ReportResponse</dokka-template-command></div><div class="brief "><p class="paragraph">Generates an aggregated report for all users.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1231195333%2FFunctions%2F1781795844" anchor-label="getUserReport" id="1231195333%2FFunctions%2F1781795844" data-filterable-set=":reporting-service:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":reporting-service:dokkaHtmlPartial/main" data-filterable-set=":reporting-service:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-user-report.html"><span>get</span><wbr></wbr><span>User</span><wbr></wbr><span><span>Report</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1231195333%2FFunctions%2F1781795844"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":reporting-service:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="get-user-report.html"><span class="token function">getUserReport</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">userId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><dokka-template-command data="{&quot;@class&quot;:&quot;org.jetbrains.dokka.base.templating.ResolveLinkCommand&quot;,&quot;dri&quot;:{&quot;packageName&quot;:&quot;com.verisure.techdemo.models&quot;,&quot;classNames&quot;:&quot;LocationReport&quot;,&quot;callable&quot;:null,&quot;target&quot;:{&quot;@class&quot;:&quot;org.jetbrains.dokka.links.PointingToDeclaration&quot;},&quot;extra&quot;:null}}">LocationReport</dokka-template-command><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Generates a report for a specific user.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2026 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
