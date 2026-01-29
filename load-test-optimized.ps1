@@ -3,9 +3,9 @@
 
 param(
     [int]$DurationSeconds = 30,
-    [int]$Concurrent = 50,
+    [int]$Concurrent = 200,
     [string]$Url = "http://localhost:8080/api/locations",
-    [int]$TargetRpm = 1000
+    [int]$TargetRps = 1000  # Target: 1000 requests per SECOND
 )
 
 # Agregar ensamblados necesarios
@@ -16,9 +16,9 @@ Write-Host "   Load Test - Techdemo (Microservicios)"  -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "URL:          $Url"
-Write-Host "Concurrencia: $Concurrent"
+Write-Host "Concurrencia: $Concurrent conexiones simultaneas"
 Write-Host "Duracion:     $DurationSeconds segundos"
-Write-Host "Objetivo:     $TargetRpm req/min (~$([math]::Round($TargetRpm/60, 1)) req/s)"
+Write-Host "Objetivo:     $TargetRps req/s (NFR requirement)"
 Write-Host ""
 
 # Verificar disponibilidad
@@ -121,9 +121,6 @@ while ((Get-Date) -lt $endTime) {
         $tasks.Add($task)
     }
     
-    # Pequeño delay
-    Start-Sleep -Milliseconds 5
-    
     # Mostrar progreso cada segundo
     $elapsed = ((Get-Date) - $startTime).TotalSeconds
     if ($elapsed -ge 1 -and ($elapsed % 1) -lt 0.1) {
@@ -207,10 +204,12 @@ Write-Host "            EVALUACION                  " -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
-if ($rpm -ge $TargetRpm) {
-    Write-Host "[OK] OBJETIVO CUMPLIDO: $rpm req/min >= $TargetRpm req/min" -ForegroundColor Green
+if ($throughput -ge $TargetRps) {
+    Write-Host "[OK] OBJETIVO CUMPLIDO: $throughput req/s >= $TargetRps req/s" -ForegroundColor Green
+} elseif ($throughput -ge ($TargetRps * 0.8)) {
+    Write-Host "[~] OBJETIVO CASI CUMPLIDO: $throughput req/s (80%+ del target $TargetRps req/s)" -ForegroundColor Yellow
 } else {
-    Write-Host "[X] OBJETIVO NO CUMPLIDO: $rpm req/min menor a $TargetRpm req/min" -ForegroundColor Red
+    Write-Host "[X] OBJETIVO NO CUMPLIDO: $throughput req/s < $TargetRps req/s" -ForegroundColor Red
 }
 
 if ($successRate -ge 99) {
